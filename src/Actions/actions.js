@@ -4,15 +4,15 @@ export const operations={
         reset,
         backspace
 }
-function onClick(button,result){
-    return {type:"Click" , button,result}
+function onClick(button){
+    return {type:"Click" , button}
 }
-function calculate(result){
-    return {type:"Calculate",result}
+function calculate(){
+    return {type:"Calculate"}
 }
-function reset(result){
-    return {type:"Reset",result}
+function reset(){
+    return {type:"Reset"}
 }
-function backspace(result){
-    return {type:"Backspace",result}
+function backspace(){
+    return {type:"Backspace"}
 }

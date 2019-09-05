@@ -6,7 +6,7 @@ export function reducer(state={result:''},action){
             }
         case 'Calculate':
                 try {  
-                  let  result= (eval(action.result) || "" ) + ""
+                  let  result= (eval(state.result) || "" ) + ""
                     return {
                         result:result
                     }
@@ -17,13 +17,13 @@ export function reducer(state={result:''},action){
                 }
         case 'Click':
             return {
-                result: action.result + action.button
+                result: state.result + action.button
             }
-            case 'Backspace':
-                return {
-                    result: action.result.slice(0, -1)
-                }
-                default:
+        case 'Backspace':
+            return {
+                result: state.result.slice(0, -1)
+                    }
+        default:
             return state;
     }
 

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import {operations} from './Actions/actions'
 class App extends Component {
     onClick = button => {
-      const {dispatch,result}=this.props;
+      const {dispatch}=this.props;
       if(button === "="){
           this.calculate()
       }
@@ -20,23 +20,23 @@ class App extends Component {
       }
 
       else {
-          dispatch(operations.onClick(button,result))
+          dispatch(operations.onClick(button))
       }
   };
     calculate = () => {
-      const {dispatch,result}=this.props;
+      const {dispatch}=this.props;
      
-         dispatch(operations.calculate(result))
+         dispatch(operations.calculate())
   };
 
   reset = () => {
-      const {dispatch,result}=this.props;
-      dispatch(operations.reset(result));
+      const {dispatch}=this.props;
+      dispatch(operations.reset());
   };
 
   backspace = () => {
-    const {dispatch,result}=this.props;
-    dispatch(operations.backspace(result))
+    const {dispatch}=this.props;
+    dispatch(operations.backspace())
   };
 
     render() {
